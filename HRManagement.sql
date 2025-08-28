@@ -2,7 +2,8 @@
 SQLyog Ultimate v12.08 (32 bit)
 MySQL - 5.7.25 : Database - HRManagement
 *********************************************************************
-*/
+*/
+
 
 /*!40101 SET NAMES utf8 */;
 
@@ -511,16 +512,19 @@ CREATE TABLE `permission` (
   PRIMARY KEY (`pId`),
   KEY `parentId` (`parentId`),
   CONSTRAINT `permission_ibfk_1` FOREIGN KEY (`parentId`) REFERENCES `permission` (`pId`)
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8;
 
-/*Data for the table `permission` */
+--
+-- Data for the table `permission`
+--
 
-insert  into `permission`(`pId`,`url`,`path`,`component`,`name`,`iconCls`,`keepAlive`,`requireAuth`,`parentId`,`enabled`) values (1,'/',NULL,NULL,'所有',NULL,NULL,NULL,NULL,1),(2,'/','/home','Home','首页','fas fa-home',NULL,1,1,1),(3,'/','/home','Home','部门管理','fas fa-users',NULL,1,1,1),(4,'/','/home','Home','员工信息管理','fas fa-address-book',NULL,1,1,1),(5,'/','/home','Home','员工薪资管理','fas fa-money-check-alt',NULL,1,1,1),(6,'/','/home','Home','员工考勤管理','fas fa-user-clock',NULL,1,1,1),(7,'/','/home','Home','系统管理','fas fa-sliders-h',NULL,1,1,1),(8,'/work/bench/**','/work/bench','WorkBench','工作台',NULL,NULL,1,2,1),(9,'/organization/management/**','/org/manage','OrgManage','部门组织机构管理',NULL,NULL,1,3,1),(10,'/employee/basic/**','/emp/basic','EmpBasic','员工基本信息管理',NULL,NULL,1,4,1),(11,'/salary/taxrate/**','/sal/tr','SalTr','税率表',NULL,NULL,1,5,1),(12,'/salary/treatment/**','/sal/treatment','SalTreatment','保障性待遇表',NULL,NULL,1,5,1),(13,'/salary/welfare/**','/sal/welfare','SalWelfare','福利表',NULL,NULL,1,5,1),(14,'/salary/specialadditionaldeduction/**','/sal/sad','SalSad','专项附加扣除表',NULL,NULL,1,5,1),(15,'/salary/employee/**','/sal/emp','SalEmp','员工基础薪资管理',NULL,NULL,1,5,1),(16,'/salary/scheme/**','/sal/scheme','SalScheme','薪资计算方案管理',NULL,NULL,1,5,1),(17,'/salary/check/**','/sal/check','SalCheck','薪资核算',NULL,NULL,1,5,1),(19,'/salary/information/**','/sal/info','SalInfo','员工历史薪资信息管理',NULL,NULL,1,5,1),(20,'/attendance/workingschedule/**','/att/ws','AttWs','排班管理',NULL,NULL,1,6,1),(21,'/attendance/transactionapp/**','/att/traapp','AttTraapp','考勤事务申请',NULL,NULL,1,6,1),(22,'/attendance/transactionmanagement/**','/att/tramanagement','AttTramanagement','考勤事务管理',NULL,NULL,1,6,1),(23,'/attendance/transactioninfo/**','/att/transactioninfo','AttTransactioninfo','考勤事务信息管理',NULL,NULL,1,6,1),(24,'/attendance/managementofday/**','/att/manaofday','AttManaOfDay','每日考勤管理',NULL,NULL,1,6,1),(25,'/attendance/managementofmonth/**','/att/manaofmonth','AttManaOfMon','考勤月度统计',NULL,NULL,1,6,1),(26,'/system/rolepermission/**','/sys/rolep','SysRolep','角色权限管理',NULL,NULL,1,7,1),(27,'/system/userrole/**','/sys/userrole','SysUserrole','用户角色管理',NULL,NULL,1,7,1),(28,'/system/log/**','/sys/log','SysLog','系统日志管理',NULL,NULL,1,7,1);
+INSERT INTO `permission` VALUES (1,'/',NULL,NULL,'所有',NULL,NULL,NULL,NULL,1),(2,'/','/home','Home','首页','fas fa-home',NULL,1,1,1),(3,'/','/home','Home','部门管理','fas fa-users',NULL,1,1,1),(4,'/','/home','Home','员工信息管理','fas fa-address-book',NULL,1,1,1),(5,'/','/home','Home','员工薪资管理','fas fa-money-check-alt',NULL,1,1,1),(6,'/','/home','Home','员工考勤管理','fas fa-user-clock',NULL,1,1,1),(7,'/','/home','Home','系统管理','fas fa-sliders-h',NULL,1,1,1),(8,'/work/bench/**','/work/bench','WorkBench','工作台',NULL,NULL,1,2,1),(9,'/organization/management/**','/org/manage','OrgManage','部门组织机构管理',NULL,NULL,1,3,1),(10,'/employee/basic/**','/emp/basic','EmpBasic','员工基本信息管理',NULL,NULL,1,4,1),(11,'/salary/taxrate/**','/sal/tr','SalTr','税率表',NULL,NULL,1,5,1),(12,'/salary/treatment/**','/sal/treatment','SalTreatment','保障性待遇表',NULL,NULL,1,5,1),(13,'/salary/welfare/**','/sal/welfare','SalWelfare','福利表',NULL,NULL,1,5,1),(14,'/salary/specialadditionaldeduction/**','/sal/sad','SalSad','专项附加扣除表',NULL,NULL,1,5,1),(15,'/salary/employee/**','/sal/emp','SalEmp','员工基础薪资管理',NULL,NULL,1,5,1),(16,'/salary/scheme/**','/sal/scheme','SalScheme','薪资计算方案管理',NULL,NULL,1,5,1),(17,'/salary/check/**','/sal/check','SalCheck','薪资核算',NULL,NULL,1,5,1),(19,'/salary/information/**','/sal/info','SalInfo','员工历史薪资信息管理',NULL,NULL,1,5,1),(20,'/attendance/workingschedule/**','/att/ws','AttWs','排班管理',NULL,NULL,1,6,1),(21,'/attendance/transactionapp/**','/att/traapp','AttTraapp','考勤事务申请',NULL,NULL,1,6,1),(22,'/attendance/transactionmanagement/**','/att/tramanagement','AttTramanagement','考勤事务管理',NULL,NULL,1,6,1),(23,'/attendance/transactioninfo/**','/att/transactioninfo','AttTransactioninfo','考勤事务信息管理',NULL,NULL,1,6,1),(24,'/attendance/managementofday/**','/att/manaofday','AttManaOfDay','每日考勤管理',NULL,NULL,1,6,1),(25,'/attendance/managementofmonth/**','/att/manaofmonth','AttManaOfMon','考勤月度统计',NULL,NULL,1,6,1),(26,'/system/rolepermission/**','/sys/rolep','SysRolep','角色权限管理',NULL,NULL,1,7,1),(27,'/system/userrole/**','/sys/userrole','SysUserrole','用户角色管理',NULL,NULL,1,7,1),(28,'/system/log/**','/sys/log','SysLog','系统日志管理',NULL,NULL,1,7,1);
 
-/*Table structure for table `permission_Role` */
+--
+-- Table structure for table `permission_Role`
+--
 
 DROP TABLE IF EXISTS `permission_Role`;
-
 CREATE TABLE `permission_Role` (
   `pRoleId` int(11) NOT NULL AUTO_INCREMENT,
   `pId` int(11) DEFAULT NULL,
@@ -530,171 +534,135 @@ CREATE TABLE `permission_Role` (
   KEY `roleId` (`roleId`),
   CONSTRAINT `permission_Role_ibfk_1` FOREIGN KEY (`pId`) REFERENCES `permission` (`pId`),
   CONSTRAINT `permission_Role_ibfk_2` FOREIGN KEY (`roleId`) REFERENCES `role` (`roleId`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
 
-/*Data for the table `permission_Role` */
+--
+-- Data for the table `permission_Role`
+--
 
-insert into `permission_Role`(`pRoleId`,`pId`,`roleId`) values (1,8,1),(2,9,1),(3,10,1),(4,11,1),(5,12,1),(6,13,1),(7,14,1),(8,15,1),(9,16,1),(10,17,1),(11,18,1),(12,19,1),(13,20,1),(14,21,1),(15,22,1),(16,23,1),(17,24,1),(18,25,1),(19,26,1),(20,27,1),(21,28,1);
+INSERT INTO `permission_Role` VALUES (1,8,1),(2,9,1),(3,10,1),(4,11,1),(5,12,1),(6,13,1),(7,14,1),(8,15,1),(9,16,1),(10,17,1),(12,19,1),(13,20,1),(14,21,1),(15,22,1),(16,23,1),(17,24,1),(18,25,1),(19,26,1),(20,27,1),(21,28,1);
 
-/*Table structure for table `systemLog` */
+--
+-- Table structure for table `systemLog`
+--
 
 DROP TABLE IF EXISTS `systemLog`;
-
 CREATE TABLE `systemLog` (
   `sysLogId` int(11) NOT NULL AUTO_INCREMENT,
   `workId` int(11) DEFAULT NULL COMMENT '员工工号',
   `broswer` varchar(64) DEFAULT NULL COMMENT '浏览器',
   `version` varchar(64) DEFAULT NULL COMMENT '浏览器版本',
   `ip` varchar(16) DEFAULT NULL COMMENT 'IP地址',
-  `logContent` longtext DEFAULT NULL COMMENT '日志内容',
-  `description` longtext DEFAULT NULL COMMENT '日志描述',
-  `logTime` timestamp DEFAULT CURRENT_TIMESTAMP COMMENT '操作时间',
+  `logContent` longtext COMMENT '日志内容',
+  `description` longtext COMMENT '日志描述',
+  `logTime` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT '操作时间',
   PRIMARY KEY (`sysLogId`),
   KEY `workId` (`workId`),
   CONSTRAINT `systemLog_ibfk_1` FOREIGN KEY (`workId`) REFERENCES `employee` (`workId`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
-/*Data for the table `systemLog` */
+--
+-- Data for the table `systemLog`
+--
 
-insert into `systemLog`(`sysLogId`,`workId`,`broswer`,`version`,`ip`,`logContent`,`description`,`logTime`) values (1,1,'Chrome','1.1.1','127.0.0.1','employee','test',NULL);
+INSERT INTO `systemLog` VALUES (1,1,'Chrome','1.1.1','127.0.0.1','employee','test',NULL);
 
-/*Table structure for View `empSalVisual` */
+--
+-- Table structure for view `empSalVisual`
+-- --
+-- -- ----------------------------
+-- -- Table structure for employeesalary
+-- -- ----------------------------
+-- DROP TABLE IF EXISTS `employeesalary`;
+-- CREATE TABLE `employeesalary` (
+--   `esId` int(11) NOT NULL AUTO_INCREMENT,
+--   `workId` int(11) DEFAULT NULL,
+--   `basicSalary` int(11) DEFAULT NULL,
+--   PRIMARY KEY (`esId`),
+--   KEY `workId` (`workId`),
+--   CONSTRAINT `employeesalary_ibfk_1` FOREIGN KEY (`workId`) REFERENCES `employee` (`workId`)
+-- ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
-DROP VIEW IF EXISTS empSalVisual;
+-- -- ----------------------------
+-- -- Data for the table `employeesalary`
+-- -- ----------------------------
+-- INSERT INTO `employeesalary` VALUES (1,1,9500);
+DROP VIEW IF EXISTS `empSalVisual`;
+CREATE VIEW `empSalVisual` AS select '2000以下' AS `区间`,count(case when (`e`.`basicSalary` between 0 and 2000) then 1 else NULL end) AS `人数` from `employeeSalary` `e` union all select '2001~4000' AS `区间`,count(case when (`e`.`basicSalary` between 2001 and 4000) then 1 else NULL end) AS `人数` from `employeeSalary` `e` union all select '4001~6000' AS `区间`,count(case when (`e`.`basicSalary` between 4001 and 6000) then 1 else NULL end) AS `人数` from `employeeSalary` `e` union all select '6001~8000' AS `区间`,count(case when (`e`.`basicSalary` between 6001 and 8000) then 1 else NULL end) AS `人数` from `employeeSalary` `e` union all select '8001~10000' AS `区间`,count(case when (`e`.`basicSalary` between 8001 and 10000) then 1 else NULL end) AS `人数` from `employeeSalary` `e` union all select '10001~12000' AS `区间`,count(case when (`e`.`basicSalary` between 10001 and 12000) then 1 else NULL end) AS `人数` from `employeeSalary` `e` union all select '12001~14000' AS `区间`,count(case when (`e`.`basicSalary` between 12001 and 14000) then 1 else NULL end) AS `人数` from `employeeSalary` `e` union all select '14001~16000' AS `区间`,count(case when (`e`.`basicSalary` between 14001 and 16000) then 1 else NULL end) AS `人数` from `employeeSalary` `e` union all select '16001~18000' AS `区间`,count(case when (`e`.`basicSalary` between 16001 and 18000) then 1 else NULL end) AS `人数` from `employeeSalary` `e` union all select '18001~20000' AS `区间`,count(case when (`e`.`basicSalary` between 18001 and 20000) then 1 else NULL end) AS `人数` from `employeeSalary` `e` union all select '20001以上' AS `区间`,count(case when (`e`.`basicSalary` > 20001) then 1 else NULL end) AS `人数` from `employeeSalary` `e`;
 
-CREATE VIEW empSalVisual AS
-SELECT
-'2000以下' AS '区间',
-COUNT(CASE WHEN e.`basicSalary` BETWEEN 0 AND 2000 THEN 1 ELSE NULL END) AS '人数'
-FROM employeesalary e
-UNION ALL
-SELECT
-'2001~4000' AS '区间',
-COUNT(CASE WHEN e.`basicSalary` BETWEEN 2001 AND 4000 THEN 1 ELSE NULL END) AS '人数'
-FROM employeesalary e
-UNION ALL
-SELECT
-'4001~6000' AS '区间',
-COUNT(CASE WHEN e.`basicSalary` BETWEEN 4001 AND 6000 THEN 1 ELSE NULL END) AS '人数'
-FROM employeesalary e
-UNION ALL
-SELECT
-'6001~8000' AS '区间',
-COUNT(CASE WHEN e.`basicSalary` BETWEEN 6001 AND 8000 THEN 1 ELSE NULL END) AS '人数'
-FROM employeesalary e
-UNION ALL
-SELECT
-'8001~10000' AS '区间',
-COUNT(CASE WHEN e.`basicSalary` BETWEEN 8001 AND 10000 THEN 1 ELSE NULL END) AS '人数'
-FROM employeesalary e
-UNION ALL
-SELECT
-'10001~12000' AS '区间',
-COUNT(CASE WHEN e.`basicSalary` BETWEEN 10001 AND 12000 THEN 1 ELSE NULL END) AS '人数'
-FROM employeesalary e
-UNION ALL
-SELECT
-'12001~14000' AS '区间',
-COUNT(CASE WHEN e.`basicSalary` BETWEEN 12001 AND 14000 THEN 1 ELSE NULL END) AS '人数'
-FROM employeesalary e
-UNION ALL
-SELECT
-'14001~16000' AS '区间',
-COUNT(CASE WHEN e.`basicSalary` BETWEEN 14001 AND 16000 THEN 1 ELSE NULL END) AS '人数'
-FROM employeesalary e
-UNION ALL
-SELECT
-'16001~18000' AS '区间',
-COUNT(CASE WHEN e.`basicSalary` BETWEEN 16001 AND 18000 THEN 1 ELSE NULL END) AS '人数'
-FROM employeesalary e
-UNION ALL
-SELECT
-'18001~20000' AS '区间',
-COUNT(CASE WHEN e.`basicSalary` BETWEEN 18001 AND 20000 THEN 1 ELSE NULL END) AS '人数'
-FROM employeesalary e
-UNION ALL
-SELECT
-'20001以上' AS '区间',
-COUNT(CASE WHEN e.`basicSalary`>20001 THEN 1 ELSE NULL END) AS '人数'
-FROM employeesalary e
 
-/* Procedure structure for procedure `addDep` */
+--
+-- Procedure structure for procedure `addDep`
+--
 
-/*!50003 DROP PROCEDURE IF EXISTS  `addDep` */;
-
+DROP PROCEDURE IF EXISTS `addDep`;
 DELIMITER $$
-
-/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `addDep`(in depName varchar(32),in parentId int,in enabled boolean,in leaderId int,out result int,out result2 int)
-begin
-  declare did int;
-  declare pDepPath varchar(64);
-  insert into department set depName=depname,parentId=parentid,enabled=enabled,leaderId=leaderid;
-  select row_count() into result;
-  select last_insert_id() into did;
-  set result2=did;
-  select depPath into pDepPath from department where depId=parentid;
-  update department set depPath=concat(pDepPath,'.',did) where depId=did;
-  update department set isParent=true where depId=parentid;
-end */$$
+CREATE PROCEDURE `addDep`(in depName varchar(32),in parentId int,in enabled boolean,in leaderId int,out result int,out result2 int)
+BEGIN
+    DECLARE did INT;
+    DECLARE pDepPath VARCHAR(64);
+    INSERT INTO department SET depName=depname,parentId=parentid,enabled=enabled,leaderId=leaderid;
+    SELECT row_count() INTO result;
+    SELECT last_insert_id() INTO did;
+    SET result2=did;
+    SELECT depPath INTO pDepPath FROM department WHERE depId=parentid;
+    UPDATE department SET depPath=concat(pDepPath,'.',did) WHERE depId=did;
+    UPDATE department SET isParent=TRUE WHERE depId=parentid;
+END$$
 DELIMITER ;
 
-/* Procedure structure for procedure `deleteDep` */
+--
+-- Procedure structure for procedure `deleteDep`
+--
 
-/*!50003 DROP PROCEDURE IF EXISTS  `deleteDep` */;
-
+DROP PROCEDURE IF EXISTS `deleteDep`;
 DELIMITER $$
-
-/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `deleteDep`(in did int,out result int)
-begin
-  declare ecount int;
-  declare pid int;
-  declare pcount int;
-  declare a int;
-  select count(*) into a from department where depId=did and isParent=false;
-  if a=0 then set result=-2;
-  else
-  select count(*) into ecount from employee where depId=did;
-  if ecount>0 then set result=-1;
-  else 
-  select parentId into pid from department where depId=did;
-  delete from department where depId=did and isParent=false;
-  select row_count() into result;
-  select count(*) into pcount from department where parentId=pid;
-  if pcount=0 then update department set isParent=false where depId=pid;
-  end if;
-  end if;
-  end if;
-end */$$
+CREATE PROCEDURE `deleteDep`(in did int,out result int)
+BEGIN
+    DECLARE ecount INT;
+    DECLARE pid INT;
+    DECLARE pcount INT;
+    DECLARE a INT;
+    SELECT count(*) INTO a FROM department WHERE depId=did AND isParent=FALSE;
+    IF a=0 THEN SET result=-2;
+    ELSE
+        SELECT count(*) INTO ecount FROM employee WHERE depId=did;
+        IF ecount>0 THEN SET result=-1;
+        ELSE
+            SELECT parentId INTO pid FROM department WHERE depId=did;
+            DELETE FROM department WHERE depId=did AND isParent=FALSE;
+            SELECT row_count() INTO result;
+            SELECT count(*) INTO pcount FROM department WHERE parentId=pid;
+            IF pcount=0 THEN UPDATE department SET isParent=FALSE WHERE depId=pid;
+            END IF;
+        END IF;
+    END IF;
+END$$
 DELIMITER ;
 
-/* Procedure structure for procedure `addEmpAndUser` */
+--
+-- Procedure structure for procedure `addEmpAndUser`
+--
 
-/*!50003 DROP PROCEDURE IF EXISTS  `addEmpAndUser` */;
-
+DROP PROCEDURE IF EXISTS `addEmpAndUser`;
 DELIMITER $$
-
-/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `addEmpAndUser`(in workId int,in empName varchar(16),in gender char(16),in birthday Date,in idCard char(18),in marital char(16),in nation varchar(32),in nativePlace varchar(32),in politic varchar(32),in email varchar(32),in cellphone char(11),in address varchar(64),in depId int,in workState char(32),in school varchar(32),in specialty varchar(32),in hDegree char(32),out result int,out result2 int)
-begin
-	declare did int;
-	declare t_error int default 0;
-	declare continue handler for sqlexception set t_error=1;
-	start transaction;
-	set autocommit = 0;
-	  insert into employee set workId=workId,empName=empName,gender=gender,birthday=birthday,idCard=idCard,marital=marital,nation=nation,nativePlace=nativePlace,politic=politic,email=email,cellphone=cellphone,address=address,depId=depId,workState=workState,school=school,specialty=specialty,hDegree=hDegree;
-	  select row_count() into result;
-	  insert into user set workId=workId,username=workId,password='$2a$10$ySG2lkvjFHY5O0./CPIE1OI8VJsuKYEzOYzqIa7AJR6sEgSzUFOAm',userface='http://bpic.588ku.com/element_pic/01/40/00/64573ce2edc0728.jpg',enabled=1,userRemark='AutoCreate';
-	  select last_insert_id() into did;
-	  insert into user_Role set userId=did,roleId=2;
-	  select row_count() into result2;
-	if t_error=1 then  
-        rollback;
-    else  
-        commit; 
-    end if; 
-end */$$
+CREATE PROCEDURE `addEmpAndUser`(in workId int,in empName varchar(16),in gender char(16),in birthday Date,in idCard char(18),in marital char(16),in nation varchar(32),in nativePlace varchar(32),in politic varchar(32),in email varchar(32),in cellphone char(11),in address varchar(64),in depId int,in workState char(32),in school varchar(32),in specialty varchar(32),in hDegree char(32),out result int,out result2 int)
+BEGIN
+    DECLARE did INT;
+    DECLARE t_error INT DEFAULT 0;
+    DECLARE CONTINUE HANDLER FOR SQLEXCEPTION SET t_error=1;
+    START TRANSACTION;
+    SET autocommit = 0;
+        INSERT INTO employee SET workId=workId,empName=empName,gender=gender,birthday=birthday,idCard=idCard,marital=marital,nation=nation,nativePlace=nativePlace,politic=politic,email=email,cellphone=cellphone,address=address,depId=depId,workState=workState,school=school,specialty=specialty,hDegree=hDegree;
+        SELECT row_count() INTO result;
+        INSERT INTO user SET workId=workId,username=workId,password='$2a$10$ySG2lkvjFHY5O0./CPIE1OI8VJsuKYEzOYzqIa7AJR6sEgSzUFOAm',userface='http://bpic.588ku.com/element_pic/01/40/00/64573ce2edc0728.jpg',enabled=1,userRemark='AutoCreate';
+        SELECT last_insert_id() INTO did;
+        INSERT INTO user_Role SET userId=did,roleId=2;
+        SELECT row_count() INTO result2;
+    IF t_error=1 THEN
+        ROLLBACK;
+    ELSE
+        COMMIT;
+    END IF;
+END$$
 DELIMITER ;
-
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
